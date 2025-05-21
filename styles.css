@@ -1,0 +1,171 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #0a0a1a; /* Fundo escuro */
+  margin: 0;
+  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  position: relative;
+  overflow-x: hidden;
+}
+
+#fundo-estrelado {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.estrela {
+  position: absolute;
+  background-color: white;
+  border-radius: 50%;
+  animation: piscar linear infinite;
+  pointer-events: none;
+}
+
+@keyframes piscar {
+  0%, 100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Ajuste as cores dos outros elementos para combinar com o tema escuro */
+h1 {
+  color: #ff758c;
+  text-shadow: 0 0 10px rgba(255, 117, 140, 0.7);
+}
+
+.message-popup {
+  background: #1a1a2e;
+  color: white;
+  border: 1px solid #ff758c;
+}
+
+.message-popup button {
+  background: #ff758c;
+  color: white;
+}
+
+.message-popup button:hover {
+  background: #d23669;
+}
+
+.game-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+.memory-card {
+  width: 120px;
+  height: 120px;
+  background: #fff;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.memory-card.flipped {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.card-back {
+  background: linear-gradient(45deg, #ff758c, #ff7eb3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.card-front {
+  background-size: cover;
+  background-position: center;
+  transform: rotateY(180deg);
+}
+
+.message-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  color: #1a1a2e;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  z-index: 100;
+  text-align: center;
+  display: none;
+  max-width: 80%;
+}
+
+.message-popup button {
+  background: #ff758c;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  color: white;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.hearts {
+  position: absolute;
+  font-size: 20px;
+  color: red;
+  pointer-events: none;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  color: #fff;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  margin-top: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+}
+
+.footer p {
+  margin: 5px 0;
+}
