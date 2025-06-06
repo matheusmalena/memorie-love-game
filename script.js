@@ -121,6 +121,19 @@ function showFinalMessage() {
   for (let i = 0; i < 50; i++) {
     setTimeout(createHearts, i * 100);
   }
+  launchConfetti();
+}
+
+function launchConfetti() {
+  for (let i = 0; i < 100; i++) {
+    const confete = document.createElement('div');
+    confete.classList.add('confete');
+    confete.style.left = Math.random() * 100 + 'vw';
+    confete.style.animationDelay = Math.random() * 2 + 's';
+    document.body.appendChild(confete);
+
+    setTimeout(() => confete.remove(), 4000);
+  }
 }
 
 function closePopup() {

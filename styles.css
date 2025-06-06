@@ -39,6 +39,44 @@ body {
   }
 }
 
+.memory-card:hover {
+  box-shadow: 0 0 15px #ff7eb3;
+  transform: scale(1.05);
+}
+
+#restartBtn {
+  background: #ff758c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background 0.3s;
+}
+
+#restartBtn:hover {
+  background: #d23669;
+}
+
+.confete {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: hsl(calc(360 * var(--i)), 70%, 60%);
+  animation: cair 4s ease-out forwards;
+  top: 0;
+  z-index: 200;
+}
+
+@keyframes cair {
+  to {
+    transform: translateY(100vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
 /* Ajuste as cores dos outros elementos para combinar com o tema escuro */
 h1 {
   color: #ff758c;
@@ -168,4 +206,73 @@ h1 {
 
 .footer p {
   margin: 5px 0;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  p {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .game-container {
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas para telas menores */
+    gap: 8px;
+    max-width: 100%;
+  }
+
+  .memory-card {
+    width: 90px;
+    height: 90px;
+    font-size: 28px;
+  }
+
+  .footer {
+    font-size: 12px;
+    padding: 10px;
+  }
+
+  .message-popup {
+    width: 90%;
+    font-size: 14px;
+    padding: 15px;
+  }
+
+  .message-popup button {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .game-container {
+    grid-template-columns: repeat(4, 1fr); /* 2 colunas para celulares bem pequenos */
+    gap: 6px;
+  }
+
+  .memory-card {
+    width: 80px;
+    height: 80px;
+    font-size: 24px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  footer p {
+    font-size: 12px;
+  }
 }

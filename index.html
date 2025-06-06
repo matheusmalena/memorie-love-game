@@ -7,11 +7,16 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <audio id="bgMusic" loop autoplay>
+  <source src="assets/love-theme.mp3" type="audio/mpeg" />
+  Seu navegador não suporta áudio.
+</audio>
   <div id="fundo-estrelado"></div>
   <h1>Feliz dia dos Namorados</h1>
   <p>Encontre os pares e descubra mensagens especiais!</p>
 
   <div class="game-container" id="gameBoard"></div>
+  <!-- <button id="restartBtn" onclick="initializeGame()">Reiniciar Jogo</button> -->
 
   <div class="message-popup" id="messagePopup">
     <h3 id="popupTitle">Parabéns!</h3>
@@ -20,7 +25,7 @@
   </div>
 
   <footer class="footer">
-  <p>Feito com muito amor ❤️ para você princesa</p>
+  <p>Feito com muito amor ❤️ para minha princesa</p>
   <p>Que cada peça nos aproxime mais!</p>
 </footer>
 
