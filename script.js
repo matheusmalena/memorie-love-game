@@ -128,7 +128,7 @@ function showLoveMessage() {
 
 function showFinalMessage() {
   document.getElementById('popupTitle').textContent = 'Parabéns, Amor!';
-  document.getElementById('popupMessage').textContent = 'Você completou nosso quebra-cabeça do amor! Cada peça representa um momento especial nosso. Eu te amo mais que tudo!';
+  document.getElementById('popupMessage').textContent = 'Você completou o nosso Jogo da Memória do Amor! Cada pecinha foi como um pedacinho da nossa história, relembrando momentos únicos e especiais. Obrigado por fazer parte de cada momento. Te amo mais que tudo!';
   const popup = document.getElementById('messagePopup');
   popup.style.display = 'flex';
   popup.style.flexDirection = 'column';
@@ -233,6 +233,12 @@ function createHearts() {
 }
 
 window.onload = initializeGame;
+
+function reiniciarJogo() {
+  document.getElementById('messagePopup').style.display = 'none'; // esconde o popup
+  finalPairCompleted = false; // reseta o estado final
+  initializeGame(); // reinicializa as cartas
+}
 
 
 function criarEstrelas() {
