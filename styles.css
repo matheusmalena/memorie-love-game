@@ -1,6 +1,12 @@
+:root {
+  --gradient-secondary: linear-gradient(90deg, #4377ef, #9e1fb7);
+  --gradient-secudary-hover: linear-gradient(90deg, #9e1fb7, #4377ef);
+  --color-primary: #6a13ce;
+} 
+
 body {
-  font-family: 'Arial', sans-serif;
-  background-color: #0a0a1a; /* Fundo escuro */
+  font-family: "Montserrat", sans-serif;
+  background-color: #0a0a1a;
   margin: 0;
   padding: 20px;
   min-height: 100vh;
@@ -22,6 +28,10 @@ body {
   overflow: hidden;
 }
 
+#restartBtn {
+  display: none;
+}
+
 .estrela {
   position: absolute;
   background-color: white;
@@ -40,12 +50,12 @@ body {
 }
 
 .memory-card:hover {
-  box-shadow: 0 0 15px #ff7eb3;
+  box-shadow: 0 0 15px #ffffff;
   transform: scale(1.05);
 }
 
 #restartBtn {
-  background: #ff758c;
+  background: var(--gradient-secondary);
   color: white;
   border: none;
   padding: 10px 20px;
@@ -54,10 +64,6 @@ body {
   cursor: pointer;
   margin-top: 15px;
   transition: background 0.3s;
-}
-
-#restartBtn:hover {
-  background: #d23669;
 }
 
 .confete {
@@ -77,25 +83,25 @@ body {
   }
 }
 
-/* Ajuste as cores dos outros elementos para combinar com o tema escuro */
 h1 {
-  color: #ff758c;
-  text-shadow: 0 0 10px rgba(255, 117, 140, 0.7);
+  background-image: var(--gradient-secondary);
+  font-family: "Dancing Script", cursive;
+  font-weight: 800 !important;
+  font-size: 68px !important;
+  margin-bottom: 10px;
+  text-align: center;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .message-popup {
   background: #1a1a2e;
   color: white;
-  border: 1px solid #ff758c;
 }
 
 .message-popup button {
-  background: #ff758c;
+  background: var(--gradient-secondary);
   color: white;
-}
-
-.message-popup button:hover {
-  background: #d23669;
 }
 
 .game-container {
@@ -137,7 +143,7 @@ h1 {
 }
 
 .card-back {
-  background: linear-gradient(45deg, #ff758c, #ff7eb3);
+  background: var(--gradient-secondary);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -159,7 +165,7 @@ h1 {
   color: #1a1a2e;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   z-index: 100;
   text-align: center;
   display: none;
@@ -167,7 +173,7 @@ h1 {
 }
 
 .message-popup button {
-  background: #ff758c;
+ background: var(--gradient-secondary);
   border: none;
   padding: 8px 15px;
   border-radius: 5px;
@@ -197,7 +203,7 @@ h1 {
   text-align: center;
   padding: 20px;
   color: #fff;
-  font-family: 'Courier New', monospace;
+  font-family: "Montserrat", sans-serif;
   font-size: 14px;
   margin-top: 40px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -206,6 +212,42 @@ h1 {
 
 .footer p {
   margin: 5px 0;
+}
+
+.music-controls {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.music-button {
+  background: var(--gradient-secondary);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 18px;
+  border-radius: 50px;
+  box-shadow: 0 4px 10px var(--gradient-secondary);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.3s;
+  margin-top: 15px;
+}
+
+.music-button:hover {
+  transform: scale(1.05);
+}
+
+.logo {
+  width: 120px;
+  height: 100px;
+  margin-right: 10px;
+}
+
+#playMusicBtn {
+  display: flex;
+  align-items: center;
+  gap: 2px;
 }
 
 @media (max-width: 768px) {
@@ -265,7 +307,7 @@ h1 {
   }
 
   h1 {
-    font-size: 20px;
+    font-size: 24px !important;
   }
 
   p {
@@ -275,4 +317,9 @@ h1 {
   footer p {
     font-size: 12px;
   }
+
+  .music-button {
+  padding: 6px 8px;
+  font-size: 14px;
+}
 }

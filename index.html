@@ -5,23 +5,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Jogo da Memória - Nosso Amor</title>
   <link rel="stylesheet" href="styles.css" />
+  <link rel="shortcut icon" href="assets/logo/logo.png" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=music_note" />
 </head>
 <body>
-  <audio id="bgMusic" loop autoplay>
-  <source src="assets/love-theme.mp3" type="audio/mpeg" />
+  <audio id="bgMusic" loop>
+  <source src="assets/musica/ShawnMendes.mp3" type="audio/mpeg" />
   Seu navegador não suporta áudio.
 </audio>
+<div class="music-controls">
+  <img class="logo" src="assets/logo/logo.png" alt="">
+  <div>
+  <button id="playMusicBtn" class="music-button"><span class="material-symbols-outlined">
+music_note
+</span> Tocar Música</button>
+  </div>
+</div>
   <div id="fundo-estrelado"></div>
   <h1>Feliz dia dos Namorados</h1>
   <p>Encontre os pares e descubra mensagens especiais!</p>
 
   <div class="game-container" id="gameBoard"></div>
-  <!-- <button id="restartBtn" onclick="initializeGame()">Reiniciar Jogo</button> -->
 
   <div class="message-popup" id="messagePopup">
     <h3 id="popupTitle">Parabéns!</h3>
     <p id="popupMessage">Você encontrou um par!</p>
-    <button onclick="closePopup()">Continuar</button>
+    <button id="continueBtn" onclick="closePopup()">Fechar</button>
+    <button id="restartBtn" onclick="initializeGame()">Reiniciar Game</button>
   </div>
 
   <footer class="footer">
@@ -30,5 +43,6 @@
 </footer>
 
   <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
 </body>
 </html>
